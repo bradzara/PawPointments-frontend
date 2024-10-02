@@ -4,9 +4,9 @@ import { HomeLoggedIn } from './components/pages/HomeLoggedIn';
 import { Login } from './components/Auth/Login';
 import { Signup } from './components/Auth/Signup';
 import { Logout } from './components/Auth/Logout';
-// import { PetList } from './components/Pets/PetList';
+import { PetIndex } from './components/Pets/PetIndex.jsx';
 // import { PetForm } from './components/Pets/PetForm';
-// import { AppointmentList } from './components/Appointments/AppointmentList';
+import { AppointmentIndex } from './components/Appointments/AppointmentIndex.jsx';
 // import { AppointmentForm } from './components/Appointments/AppointmentForm.jsx';
 
 function App() {
@@ -18,10 +18,10 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/logout" element={<Logout />} />
-        {/* <Route path="/pets" element={<PetList />} />
-        <Route path="/pets/new" element={<PetForm />} />
-        <Route path="/appointments" element={<AppointmentList />} />
-        <Route path="/appointments/new" element={<AppointmentForm />} /> */}
+        <Route path="/pets" element={<PetIndex />} />
+        {/* <Route path="/pets/new" element={<PetForm />} /> */}
+        <Route path="/appointments" element={<AppointmentIndex />} />
+        {/* <Route path="/appointments/new" element={<AppointmentForm />} /> */}
       </Routes>
     </Router>
   );
