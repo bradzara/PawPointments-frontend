@@ -20,7 +20,7 @@ function App() {
         <Route path="/logout" element={<Logout />} />
         <Route path="/pets" element={<PetIndex />} />
         {/* <Route path="/pets/new" element={<PetForm />} /> */}
-        <Route path="/appointments" element={<AppointmentIndex />} />
+        <Route path="/appointments/upcoming" element={<AppointmentIndex />} />
         {/* <Route path="/appointments/new" element={<AppointmentForm />} /> */}
       </Routes>
     </Router>

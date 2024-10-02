@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { getAllAppointments } from "../../services/AppointmentsApi";
+import { Sidebar } from "../pages/Sidebar";
 
 export function AppointmentIndex() {
   const [appointments, setAppointments] = useState([]);
@@ -13,11 +14,12 @@ export function AppointmentIndex() {
 
   return (
     <div>
+      <Sidebar />
       <h1>Appointments</h1>
       <ul>
-        {appointments.map((appointment) => {
+        {appointments.map((appointment) => (
           <li key={appointment.id}>{appointment.description}</li>
-        })}
+        ))}
       </ul>
     </div>
   );

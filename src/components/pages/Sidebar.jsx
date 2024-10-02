@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import './Sidebar.css'
 
 export function Sidebar() {
   const [collapsed, setCollapsed] = useState(true);
 
   const toggleSidebar = () => {
-    setCollapsed(collapsed);
+    setCollapsed(!collapsed);
   };
 
   return (
