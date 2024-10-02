@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { HomeLoggedOut } from './components/pages/HomeLoggedOut';
+import { HomeLoggedIn } from './components/pages/HomeLoggedIn';
 import { Login } from './components/Auth/Login';
 import { Signup } from './components/Auth/Signup';
 import { Logout } from './components/Auth/Logout';
@@ -13,6 +14,7 @@ function App() {
     <Router>
       <Routes>
         <Route exact path="/" element={<HomeLoggedOut />} />
+        <Route exact path="/home" element={<HomeLoggedIn />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/logout" element={<Logout />} />
