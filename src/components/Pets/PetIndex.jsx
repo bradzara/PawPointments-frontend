@@ -15,11 +15,11 @@ export function PetIndex() {
   return (
     <div>
       <Sidebar />
-      <h1>Your Clientele!</h1>
+      <h1>Your Clientail!</h1>
       <ul>
         {pets.map((pet) => (
           <div key={pet.id}>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtJU_aRybhiJnVUitOFKoexK89bvCy4oyB5ACTXE8zUxF8xhVM" alt={pet.name} />
+            <img src={`http://localhost:3000${pet.image_url}`} alt={pet.name} />
             <h2>{pet.name}</h2>
             {pet. breed && <p>Breed: {pet.breed}</p>}
             {pet.age && <p>Age: {pet.age}</p>}
