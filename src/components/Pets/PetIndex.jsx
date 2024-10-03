@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getAllPets } from "../../services/PetsApi";
 import { Sidebar } from "../pages/Sidebar";
+import { Link } from "react-router-dom";
 
 export function PetIndex() {
   const [pets, setPets] = useState([]);
@@ -16,24 +17,16 @@ export function PetIndex() {
     <div>
       <Sidebar />
       <h1>Your Clientail!</h1>
-      <ul>
+      <div>
         {pets.map((pet) => (
           <div key={pet.id}>
+            <Link to={`/pets/${pet.id}`}>
             <img src={`http://localhost:3000${pet.image_url}`} alt={pet.name} />
-            <h2>{pet.name}</h2>
-            {pet. breed && <p>Breed: {pet.breed}</p>}
-            {pet.age && <p>Age: {pet.age}</p>}
-            {pet.notes && <p>Notes: {pet.notes}</p>}
-            <ul>
-              <p>Owner Information:</p> 
-              <li>Name: {pet.owner.name}</li>
-              <li>Email: {pet.owner.email}</li>
-              <li>Phone Number: {pet.owner.phone}</li>
-              <li>Address: {pet.owner.address}</li>
-            </ul>
+              <h2>{pet.name}</h2>
+            </Link>
           </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }
