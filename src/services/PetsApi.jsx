@@ -11,11 +11,15 @@ export const getPet = (id) => {
 };
 
 export const createPet = (petData) => {
-  return axios.post(`${baseURL}/pets.json`, petData);
+  return axios.post(`${baseURL}/pets.json`, petData, {
+    headers: { 'Content-Type': 'multipart/form-data'}
+  });
 };
 
 export const updatePet = (id, petData) => {
-  return axios.patch(`${baseURL}/pets/${id}.json`, petData);
+  return axios.patch(`${baseURL}/pets/${id}.json`, petData, {
+    headers: { 'Content-Type': 'multipart/form-data'}
+  });
 };
 
 export const deletePet = (id) => {

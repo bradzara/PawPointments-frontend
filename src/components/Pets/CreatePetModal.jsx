@@ -1,21 +1,33 @@
 import { useState } from "react";
 import { createPet } from "../../services/PetsApi";
+import './CreatePetModal.css';
 
 export function CreatePetModal({ onClose }) {
   const [name, setName] = useState("");
   const [breed, setBreed] = useState("");
   const [age, setAge] = useState("");
   const [notes, setNotes] = useState("");
+  const [image, setImage] = useState(null);
+  const [ownerName, setOwnerName] = useState("");
+  const [ownerEmail, setOwnerEmail] = useState("");
+  const [ownerPhone, setOwnerPhone] = useState("");
+  const [ownerAddress, setOwnerAddress] = useState("");
 
   const handleCreatePet = async (e) => {
     e.preventDefault();
 
-    const newPet = {
-      name,
-      breed,
-      age,
-      notes
-    };
+    const newPet = new FormData();
+    newPet.append("pet[name]", name);
+    newPet.append("pet[breed]", breed);
+    newPet.append("pet[age]", age);
+    newPet.append("pet[notes]", notes);
+    if (image) {
+      newPet.append("pet[image]", image);
+    }
+    newPet.append("pet[owner_attributes][name]", ownerName);
+    newPet.append("pet[owner_attributes][email]", ownerEmail);
+    newPet.append("pet[owner_attributes][phone]", ownerPhone);
+    newPet.append("pet[owner_attributes][address]", ownerAddress);
 
     try {
       await createPet(newPet);
@@ -59,6 +71,47 @@ export function CreatePetModal({ onClose }) {
             <textarea 
               value={notes} 
               onChange={(e) => setNotes(e.target.value)} 
+            />
+          </label>
+          <label>
+            Image:
+            <input
+              type="file"
+              accept="image/*"
+              onChange={(e) => setImage(e.target.files[0])}
+            />
+          </label>
+          <h3>Owner Information</h3>
+          <label>
+            Owner Name:
+            <input 
+              type="text" 
+              value={ownerName} 
+              onChange={(e) => setOwnerName(e.target.value)} 
+            />
+          </label>
+          <label>
+            Owner Email:
+            <input 
+              type="email" 
+              value={ownerEmail} 
+              onChange={(e) => setOwnerEmail(e.target.value)} 
+            />
+          </label>
+          <label>
+            Owner Phone:
+            <input 
+              type="tel" 
+              value={ownerPhone} 
+              onChange={(e) => setOwnerPhone(e.target.value)} 
+            />
+          </label>
+          <label>
+            Owner Address:
+            <input 
+              type="text" 
+              value={ownerAddress} 
+              onChange={(e) => setOwnerAddress(e.target.value)} 
             />
           </label>
           <button type="submit">Add Pet</button>
