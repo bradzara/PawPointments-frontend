@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { HomeLoggedOut } from './components/pages/HomeLoggedOut';
-import { HomeLoggedIn } from './components/pages/HomeLoggedIn';
+import { HomeLoggedOut } from './components/Pages/HomeLoggedOut.jsx';
+import { HomeLoggedIn } from './components/Pages/HomeLoggedIn.jsx';
 import { Login } from './components/Auth/Login';
 import { Signup } from './components/Auth/Signup';
 import { Logout } from './components/Auth/Logout';

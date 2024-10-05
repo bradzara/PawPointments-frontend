@@ -44,8 +44,8 @@ export function PetIndex() {
       <div>
         {pets.map((pet) => (
           <div key={pet.id}>
-            <img src={`http://localhost:3000${pet.image_url}`} alt={pet.name} />
             <Link to={`/pets/${pet.id}`}>
+              <img src={`http://localhost:3000${pet.image_url}`} alt={pet.name} />
               <h2>{pet.name}</h2>
             </Link>
             <button onClick={() => handleEditPet(pet)}>
