@@ -38,8 +38,8 @@ export function CreatePetModal({ onClose }) {
   };
 
   return (
-    <div className="modal">
-      <div className="modal-content">
+    <div className="pet-modal">
+      <div className="pet-modal-content">
         <h2>Add New Pet</h2>
         <form onSubmit={handleCreatePet}>
           <label>
@@ -83,7 +83,7 @@ export function CreatePetModal({ onClose }) {
           </label>
           <h3>Owner Information</h3>
           <label>
-            Owner Name:
+            Name:
             <input 
               type="text" 
               value={ownerName} 
@@ -91,7 +91,7 @@ export function CreatePetModal({ onClose }) {
             />
           </label>
           <label>
-            Owner Email:
+            Email:
             <input 
               type="email" 
               value={ownerEmail} 
@@ -99,7 +99,7 @@ export function CreatePetModal({ onClose }) {
             />
           </label>
           <label>
-            Owner Phone:
+            Phone:
             <input 
               type="tel" 
               value={ownerPhone} 
@@ -107,7 +107,7 @@ export function CreatePetModal({ onClose }) {
             />
           </label>
           <label>
-            Owner Address:
+            Address:
             <input 
               type="text" 
               value={ownerAddress} 

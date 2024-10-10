@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import { getAllAppointments } from "../../services/AppointmentsApi";
+import { CreateAppointmentModal } from "./CreateAppointmentModal";
 import { format } from "date-fns";
 
 export function AppointmentIndex() {
+  const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
   const [appointments, setAppointments] = useState([]);
 
   useEffect(() => {
@@ -12,9 +14,19 @@ export function AppointmentIndex() {
     });
   }, []);
 
+  
+  const handleCreateAppointment = () => {
+    setIsCreateModalOpen(true);
+  }
+
+  const handleCloseCreateModal = () => {
+    setIsCreateModalOpen(false);
+  }
+
   return (
     <div>
       <h1>Appointments</h1>
+      <button onClick={handleCreateAppointment}>Create new appointment</button>
       <ul>
         {appointments.map((appointment) => (
           <li key={appointment.id}>
@@ -32,6 +44,11 @@ export function AppointmentIndex() {
           </li>
         ))}
       </ul>
+
+
+      {isCreateModalOpen && (
+        <CreateAppointmentModal onClose={handleCloseCreateModal} />
+      )}
     </div>
   );
 }

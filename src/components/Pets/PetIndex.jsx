@@ -31,7 +31,7 @@ export function PetIndex() {
     setIsCreateModalOpen(true);
   };
 
-  const closeCreateModal = () => {
+  const handleCloseCreateModal = () => {
     setIsCreateModalOpen(false);
   };
 
@@ -58,7 +58,7 @@ export function PetIndex() {
       )}
 
       {isCreateModalOpen && (
-        <CreatePetModal onClose={closeCreateModal} />
+        <CreatePetModal onClose={handleCloseCreateModal} />
       )}
     </div>
   );
