@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import { getPet } from "../../services/PetsApi"
-import { Sidebar } from "../pages/Sidebar";
 
 export function PetShow() {
   const { id } = useParams();
@@ -19,7 +18,6 @@ export function PetShow() {
   
   return (
     <div>
-      <Sidebar />
       <img src={`http://localhost:3000${pet.image_url}`} alt={pet.name} />
       <h1>{pet.name}</h1>
       {pet.breed && <p>Breed: {pet.breed}</p>}

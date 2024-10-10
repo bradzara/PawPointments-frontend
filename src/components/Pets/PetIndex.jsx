@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { getAllPets } from "../../services/PetsApi";
-import { Sidebar } from "../pages/Sidebar";
 import { EditPetModal } from "./EditPetModal";
 import { CreatePetModal } from "./CreatePetModal";
 import { Link } from "react-router-dom";
@@ -38,7 +37,6 @@ export function PetIndex() {
 
   return (
     <div>
-      <Sidebar />
       <h1>Your Clientail!</h1>
       <button onClick={handleCreatePet}>Add New Pet</button>
       <div>

@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { getAllAppointments } from "../../services/AppointmentsApi";
-import { Sidebar } from "../pages/Sidebar";
 import { format } from "date-fns";
 
 export function AppointmentIndex() {
@@ -15,7 +14,6 @@ export function AppointmentIndex() {
 
   return (
     <div>
-      <Sidebar />
       <h1>Appointments</h1>
       <ul>
         {appointments.map((appointment) => (

@@ -1,9 +1,12 @@
 // import { useEffect, useState } from "react";
 // import axios from "axios";
-import { Sidebar } from "./Sidebar";
+
 
 export function HomeLoggedIn() {
   return (
-    <Sidebar />
-  );
+    <div>
+      <h1>Pawpointments</h1>
+      <p>Make pet setting easy!</p>
+    </div>
+  )
 }
