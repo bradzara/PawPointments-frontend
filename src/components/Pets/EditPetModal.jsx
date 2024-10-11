@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { updatePet } from "../../services/PetsApi";
-// import "./EditPetModal.css";
+import "./EditPetModal.css";
 
 export function EditPetModal({ pet, onClose }) {
   const [name, setName] = useState(pet.name);

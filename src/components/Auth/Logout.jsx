@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export function Logout() {
-  const handleClick = (event) => {
+  const handleLogout = (event) => {
     event.preventDefault();
     delete axios.defaults.headers.common["Authorization"];
     localStorage.removeItem("jwt");
@@ -9,7 +9,7 @@ export function Logout() {
   };
 
   return (
-    <a href="#" onClick={handleClick}>
+    <a href="#" onClick={handleLogout}>
       Logout
     </a>
   );

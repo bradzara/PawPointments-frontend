@@ -13,9 +13,9 @@ import { Navbar } from './components/Pages/Navbar';
 
 function App() {
   return (
-    <div>
-      <Navbar />
-      <Router>
+    <Router>
+      <div>
+        <Navbar />
         <Routes>
           <Route exact path="/" element={<HomeLoggedOut />} />
           <Route exact path="/home" element={<HomeLoggedIn />} />
@@ -28,8 +28,8 @@ function App() {
           <Route path="/appointments/upcoming" element={<AppointmentIndex />} />
           {/* <Route path="/appointments/new" element={<AppointmentForm />} /> */}
         </Routes>
-      </Router>
-    </div>
+      </div>
+    </Router>
   );
 }
 

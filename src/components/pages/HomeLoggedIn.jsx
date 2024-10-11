@@ -6,7 +6,7 @@ export function HomeLoggedIn() {
   return (
     <div>
       <h1>Pawpointments</h1>
-      <p>Make pet setting easy!</p>
+      <p>Make pet sitting easy!</p>
     </div>
   )
 }
