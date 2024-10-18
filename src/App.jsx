@@ -6,10 +6,8 @@ import { Signup } from './components/Auth/Signup';
 import { Logout } from './components/Auth/Logout';
 import { PetIndex } from './components/Pets/PetIndex';
 import { PetShow } from './components/Pets/PetShow';
-// import { PetForm } from './components/Pets/PetForm';
 import { AppointmentIndex } from './components/Appointments/AppointmentIndex';
 import { Navbar } from './components/Pages/Navbar';
-// import { AppointmentForm } from './components/Appointments/AppointmentForm';
 
 function App() {
   return (
@@ -24,9 +22,7 @@ function App() {
           <Route path="/logout" element={<Logout />} />
           <Route path="/pets" element={<PetIndex />} />
           <Route path="/pets/:id" element={<PetShow />} />
-          {/* <Route path="/pets/new" element={<PetForm />} /> */}
           <Route path="/appointments/upcoming" element={<AppointmentIndex />} />
-          {/* <Route path="/appointments/new" element={<AppointmentForm />} /> */}
         </Routes>
       </div>
     </Router>

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Modal, Button } from 'react-bootstrap';
 import { updatePet } from "../../services/PetsApi";
 import "./EditPetModal.css";
 
@@ -10,26 +11,28 @@ export function EditPetModal({ pet, onClose }) {
 
   const handleUpdate = async (e) => {
     e.preventDefault();
-    
+
     const updatedPet = {
       name,
       breed,
       age,
       notes
     };
-
+    
     try {
       await updatePet(pet.id, updatedPet);
-      onClose();
+      onClose(); // Close modal after successful update
     } catch (error) {
       console.error("Error updating pet:", error);
     }
   };
 
   return (
-    <div className="modal">
-      <div className="modal-content">
-        <h2>Edit Pet Information</h2>
+    <Modal show={true} onHide={onClose}>
+      <Modal.Header closeButton>
+        <Modal.Title>Edit Pet Information</Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
         <form onSubmit={handleUpdate}>
           <label>
             Name:
@@ -62,10 +65,12 @@ export function EditPetModal({ pet, onClose }) {
               onChange={(e) => setNotes(e.target.value)} 
             />
           </label>
-          <button type="submit">Update Pet</button>
-          <button type="button" onClick={onClose}>Cancel</button>
+          <div className="modal-footer">
+            <Button type="submit" variant="primary">Update Pet</Button>
+            <Button type="button" variant="secondary" onClick={onClose}>Cancel</Button>
+          </div>
         </form>
-      </div>
-    </div>
+      </Modal.Body>
+    </Modal>
   );
 }
