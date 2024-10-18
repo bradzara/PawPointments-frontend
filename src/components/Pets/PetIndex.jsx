@@ -6,7 +6,9 @@ import { Link } from "react-router-dom";
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import "./PetIndex.css"
 
 export function PetIndex() {
   const [pets, setPets] = useState([]);
@@ -54,12 +56,12 @@ export function PetIndex() {
 
   return (
     <div className="container">
-      <h1 className="text-center" style={{paddingTop: "25px"}}>Your Clientail!</h1>
-      <button onClick={handleCreatePet} className="btn btn-primary d-block mx-auto mb-4">Add New Pet</button>
+      <h1 className="text-center page-title" style={{paddingTop: "25px"}}>Your Clientail!</h1>
+      <button onClick={handleCreatePet} className="btn btn-primary d-block mx-auto mb-4 add-btn">Add New Pet</button>
       <Row xs={1} md={2} className="g-4 justify-content-center">
         {pets.map((pet) => (
           <Col key={pet.id} className="d-flex justify-content-center">
-            <Card className="w-100 h-auto">
+            <Card className="w-100 h-auto pet-card shadow-lg">
               <Link to={`/pets/${pet.id}`}>
                 <Card.Img
                   variant="top"
@@ -70,25 +72,26 @@ export function PetIndex() {
                     width: "100%",
                     objectFit: "cover",
                   }}
+                  className="pet-img"
                 />
               </Link>
               <Card.Body>
-                <Card.Title>{pet.name}</Card.Title>
-                <Card.Text>
+                <Card.Title className="pet-name">{pet.name}</Card.Title>
+                <Card.Text className="pet-info">
                   {pet.breed && <p>Breed: {pet.breed}</p>}
                   {pet.age && <p>Age: {pet.age}</p>}
                   {pet.notes && <p>Notes: {pet.notes}</p>}
-                  <h2>Owner Information:</h2>
-                  <ul>
+                  <h2 className="owner-title">Owner Information:</h2>
+                  <ul className="owner-info">
                     <li>Name: {pet.owner.name}</li>
                     <li>Email: {pet.owner.email}</li>
                     <li>Phone Number: {pet.owner.phone}</li>
                     <li>Address: {pet.owner.address}</li>
                   </ul>
                 </Card.Text>
-                <button className="btn btn-primary" onClick={() => handleEditPet(pet)}>
+                <Button variant="outline-primary" className="btn btn-primary edit-btn" onClick={() => handleEditPet(pet)}>
                   Edit {pet.name}
-                </button>
+                </Button>
               </Card.Body>
             </Card>
           </Col>

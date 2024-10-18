@@ -1,0 +1,75 @@
+/* Page Title */
+.page-title {
+  color: #3b5998;
+  font-weight: bold;
+  padding-top: 25px;
+  font-size: 2rem;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+/* Add New Pet Button */
+.add-btn {
+  margin-bottom: 30px;
+  background-color: #ffd700;
+  border-color: #ffd700;
+  color: #3b5998;
+}
+
+.add-btn:hover {
+  background-color: #ffcc00;
+  border-color: #ffcc00;
+}
+
+/* Pet Card Styling */
+.pet-card {
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pet-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.pet-img {
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+  border-bottom: 3px solid #ffd700;
+}
+
+.pet-name {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #3b5998;
+}
+
+.pet-info {
+  color: #555;
+}
+
+.owner-title {
+  color: #3b5998;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.owner-info {
+  color: #666;
+}
+
+/* Edit Button */
+.edit-btn {
+  background-color: #ffd700;
+  border-color: #ffd700;
+  color: #3b5998;
+  margin-top: 10px;
+}
+
+.edit-btn:hover {
+  background-color: #ffcc00;
+  border-color: #ffcc00;
+  color: #fff;
+}
